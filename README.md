@@ -30,12 +30,17 @@ To preprocess the data before creating the model, we undertook the following mea
 
 
 ## Training & Optimising our Model
-Using the Keras library, a deep learning model with 2 hidden layers, each with a varying number of neurons and activation functions selected via the Keras Tuner library. The output layer comprises 1 neuron using a sigmoid activation function.
+Using the Keras library, a deep learning model with 2 hidden layers, each with a varying number of neurons was created. The relu activation function was selected for both of these layers. The output layer comprises 1 neuron using a sigmoid activation function.
 
 The model utilized the 'Adam' optimizer, an optimization algorithm that uses both momentum and adaptive learning rates to speed up the convergence of the optimization process, and the binary cross-entropy loss function. The dataset was first split into training and testing sets and a StandardScaler was used to normalize the data. During training, the ModelCheckpoint callback function was utilised to save the model weights every 5 epochs.
 
-On testing, the model (Model 1) attained an accuracy of 72.55%. Unfortunately, this did not meet our anticipated model performance of 75%. To enhance the model's accuracy, we experimented with altering the number of neurons and layers, changing the activation functions, and changing. However, these efforts did not yield a considerable improvement in accuracy (Model 2: 72.65% Accuracy).
+On testing, the model (Model 1) attained an accuracy of 72.68%. Unfortunately, this did not meet our anticipated model performance of 75%. To enhance the model's accuracy, we experimented with altering the number of neurons and layers, changing the activation functions, and increases the amount of epochs. However, these efforts did not yield a considerable improvement in accuracy (Model 2: 72.72% Accuracy).
 
 ## Recommendations
-TBC
+Given the characteristics of the dataset (i.e., its large size and classification problem), a different machine learning model such as a Random Forest Classifier or a logistic regression might perform better at predicting which organisation was successful.
+
+If interpretability is a priority, which is often the case when accounting for expenditure by charitable organisations, a logistic regression would be better placed to tackle our classification problem. Considering that we dropped a several uninformative columns in the current attempt, it may be useful to split the entire sample of organisations into sub-sets according to 'ORGANIZATION' type and/or  industry ('AFFILIATION') and examine how different features may contribute to the perceived effectiveness of how funds are spent in these organisations. 
+
+With a reduction in the overall dataset's complexity and size through splitting the dataset, a series of logistic regressions can be used to provided a more nuanced picture to inform future funding decisions for organisations in a variety of vastly different industries. The coefficients of logistic regression represent the contribution of each input variable to the output variable. This can be useful for understanding the factors that are driving the predictions.
+
 
