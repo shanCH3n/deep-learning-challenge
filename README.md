@@ -28,7 +28,6 @@ To preprocess the data before creating the model, we undertook the following mea
 - Consolidated low-frequency values in the APPLICATION_TYPE and CLASSIFICATION columns into an Other category.
 - Converted categorical data to numeric through the use of the pd.get_dummies function (One-hot encoding)
 
-
 ## Training & Optimising our Model
 Using the Keras library, a deep learning model with 2 hidden layers, each with a varying number of neurons was created. The relu activation function was selected for both of these layers. The output layer comprises 1 neuron using a sigmoid activation function.
 
@@ -43,4 +42,5 @@ If interpretability is a priority, which is often the case when accounting for e
 
 With a reduction in the overall dataset's complexity and size through splitting the dataset, a series of logistic regressions can be used to provided a more nuanced picture to inform future funding decisions for organisations in a variety of vastly different industries. The coefficients of logistic regression represent the contribution of each input variable to the output variable. This can be useful for understanding the factors that are driving the predictions.
 
-
+## References
+IRS. Tax Exempt Organization Search Bulk Data Downloads (https://www.irs.gov/charities-non-profits/tax-exempt-organization-search-bulk-data-downloads)
